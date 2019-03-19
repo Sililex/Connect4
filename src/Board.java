@@ -5,8 +5,8 @@ public class Board {
 		board = new String[6][7];
 	}
 
-	public void setPiece(String piece, int x, int y){
-
+	public void setPiece(String piece,int x,int y){
+		board[x][y] = piece;
 	}
 
 	public static void insertPiece(String piece, int x) {
@@ -14,8 +14,32 @@ public class Board {
 
 	}
 
-	public static boolean checkVictory() {
-		return false;
+	public boolean checkVictory() {
+
+
+		public boolean checkVictory(int x){
+			int y = 0;
+			int[][] dir = {{1,0},{-1,0},{1,1},{1,-1},{-1,1},{-1,-1},{0,-1}};
+			String piece;
+
+			while (board[x][5-y]==null && y>0){
+				y--;
+			}
+			piece = board[x][y];
+
+			for(int i=0;i<dir.length;i++){
+				int xMax = x + dir[i][0]*3;
+				int yMax = y + dir[i][1]*3;
+
+				if(yMax>=0 && xMax>=0 && yMax<6 && xMax < 7){
+
+				}
+			}
+
+
+
+			return false;
+		}
 	}
 
 	public void printBoard() {
